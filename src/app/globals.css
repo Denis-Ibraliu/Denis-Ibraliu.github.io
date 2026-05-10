@@ -1,0 +1,294 @@
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+:root {
+  color-scheme: light;
+
+  --text-title-h1: 3.5rem;
+  --text-title-h1-line-height: 4rem;
+  --text-title-h1-letter-spacing: -0.01em;
+  --text-title-h1-font-weight: 500;
+  --text-title-h2: 3rem;
+  --text-title-h2-line-height: 3.5rem;
+  --text-title-h2-letter-spacing: -0.01em;
+  --text-title-h2-font-weight: 500;
+  --text-title-h3: 2.5rem;
+  --text-title-h3-line-height: 3rem;
+  --text-title-h3-letter-spacing: -0.01em;
+  --text-title-h3-font-weight: 500;
+  --text-title-h4: 2rem;
+  --text-title-h4-line-height: 2.5rem;
+  --text-title-h4-letter-spacing: -0.005em;
+  --text-title-h4-font-weight: 500;
+  --text-title-h5: 1.5rem;
+  --text-title-h5-line-height: 2rem;
+  --text-title-h5-letter-spacing: 0;
+  --text-title-h5-font-weight: 500;
+  --text-title-h6: 1.25rem;
+  --text-title-h6-line-height: 1.75rem;
+  --text-title-h6-letter-spacing: 0;
+  --text-title-h6-font-weight: 500;
+
+  --text-label-lg: 1.125rem;
+  --text-label-lg-line-height: 1.5rem;
+  --text-label-lg-letter-spacing: -0.015em;
+  --text-label-lg-font-weight: 500;
+  --text-label-md: 1rem;
+  --text-label-md-line-height: 1.5rem;
+  --text-label-md-letter-spacing: -0.011em;
+  --text-label-md-font-weight: 500;
+  --text-label-sm: 0.875rem;
+  --text-label-sm-line-height: 1.25rem;
+  --text-label-sm-letter-spacing: -0.006em;
+  --text-label-sm-font-weight: 500;
+
+  --text-paragraph-lg: 1.125rem;
+  --text-paragraph-lg-line-height: 1.75rem;
+  --text-paragraph-lg-letter-spacing: -0.015em;
+  --text-paragraph-lg-font-weight: 400;
+  --text-paragraph-md: 1rem;
+  --text-paragraph-md-line-height: 1.5rem;
+  --text-paragraph-md-letter-spacing: -0.011em;
+  --text-paragraph-md-font-weight: 400;
+  --text-paragraph-sm: 0.875rem;
+  --text-paragraph-sm-line-height: 1.25rem;
+  --text-paragraph-sm-letter-spacing: -0.006em;
+  --text-paragraph-sm-font-weight: 400;
+
+  --text-subheading-sm: 0.875rem;
+  --text-subheading-sm-line-height: 1.25rem;
+  --text-subheading-sm-letter-spacing: 0.06em;
+  --text-subheading-sm-font-weight: 500;
+  --text-subheading-xs: 0.75rem;
+  --text-subheading-xs-line-height: 1rem;
+  --text-subheading-xs-letter-spacing: 0.04em;
+  --text-subheading-xs-font-weight: 500;
+
+  --text-doc-label: 1.125rem;
+  --text-doc-label-line-height: 2rem;
+  --text-doc-label-letter-spacing: -0.015em;
+  --text-doc-label-font-weight: 500;
+  --text-doc-paragraph: 1.125rem;
+  --text-doc-paragraph-line-height: 2rem;
+  --text-doc-paragraph-letter-spacing: -0.015em;
+  --text-doc-paragraph-font-weight: 400;
+
+  --color-bg-white-0: hsl(0 0% 100%);
+  --color-bg-weak-50: hsl(210 40% 98%);
+  --color-bg-soft-200: hsl(214 32% 96%);
+  --color-bg-sub-300: hsl(214 27% 92%);
+  --color-bg-surface-800: hsl(218 34% 16%);
+  --color-bg-strong-950: hsl(222 47% 11%);
+
+  --color-text-white-0: hsl(0 0% 100%);
+  --color-text-disabled-300: hsl(214 18% 72%);
+  --color-text-soft-400: hsl(216 15% 57%);
+  --color-text-sub-600: hsl(218 17% 40%);
+  --color-text-strong-950: hsl(222 47% 11%);
+
+  --color-stroke-white-0: hsl(0 0% 100% / 0.32);
+  --color-stroke-soft-200: hsl(214 31% 91%);
+  --color-stroke-sub-300: hsl(215 23% 84%);
+  --color-stroke-strong-950: hsl(222 47% 11%);
+
+  --color-primary-alpha-10: hsl(221 83% 53% / 0.1);
+  --color-primary-alpha-16: hsl(221 83% 53% / 0.16);
+  --color-primary-alpha-24: hsl(221 83% 53% / 0.24);
+  --color-primary-lighter: hsl(214 100% 97%);
+  --color-primary-light: hsl(213 97% 87%);
+  --color-primary-base: hsl(221 83% 53%);
+  --color-primary-dark: hsl(224 76% 48%);
+
+  --shadow-regular-xs: 0 1px 2px 0 #0a0d1408;
+  --shadow-regular-sm: 0 2px 4px #1b1c1d0a;
+  --shadow-regular-md: 0 16px 32px -12px rgb(14 18 27 / 0.18);
+
+  --radius-10: 0.625rem;
+  --radius-20: 1.25rem;
+
+  --background: var(--color-bg-weak-50);
+  --foreground: var(--color-text-strong-950);
+  --muted: var(--color-text-sub-600);
+  --card: hsl(0 0% 100% / 0.84);
+  --border: var(--color-stroke-soft-200);
+  --accent: var(--color-primary-base);
+  --accent-soft: var(--color-primary-alpha-16);
+
+  --color-fd-background: var(--color-bg-weak-50);
+  --color-fd-foreground: var(--color-text-strong-950);
+  --color-fd-muted: var(--color-bg-soft-200);
+  --color-fd-muted-foreground: var(--color-text-sub-600);
+  --color-fd-popover: var(--color-bg-white-0);
+  --color-fd-popover-foreground: var(--color-text-strong-950);
+  --color-fd-card: var(--color-bg-white-0);
+  --color-fd-card-foreground: var(--color-text-strong-950);
+  --color-fd-border: var(--color-stroke-soft-200);
+  --color-fd-primary: var(--color-primary-base);
+  --color-fd-primary-foreground: var(--color-text-white-0);
+  --color-fd-secondary: var(--color-bg-soft-200);
+  --color-fd-secondary-foreground: var(--color-text-strong-950);
+  --color-fd-accent: var(--color-primary-alpha-10);
+  --color-fd-accent-foreground: var(--color-primary-dark);
+  --color-fd-ring: var(--color-primary-light);
+  --color-fd-overlay: hsl(222 47% 11% / 0.42);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --color-bg-white-0: hsl(222 24% 10%);
+  --color-bg-weak-50: hsl(222 39% 8%);
+  --color-bg-soft-200: hsl(220 23% 13%);
+  --color-bg-sub-300: hsl(218 18% 18%);
+  --color-bg-surface-800: hsl(215 30% 22%);
+  --color-bg-strong-950: hsl(210 40% 96%);
+
+  --color-text-white-0: hsl(210 40% 96%);
+  --color-text-disabled-300: hsl(217 15% 46%);
+  --color-text-soft-400: hsl(215 16% 65%);
+  --color-text-sub-600: hsl(214 20% 76%);
+  --color-text-strong-950: hsl(210 40% 96%);
+
+  --color-stroke-white-0: hsl(0 0% 100% / 0.28);
+  --color-stroke-soft-200: hsl(217 20% 19%);
+  --color-stroke-sub-300: hsl(217 16% 26%);
+  --color-stroke-strong-950: hsl(210 40% 96%);
+
+  --color-primary-alpha-10: hsl(213 97% 87% / 0.14);
+  --color-primary-alpha-16: hsl(213 97% 87% / 0.18);
+  --color-primary-alpha-24: hsl(213 97% 87% / 0.24);
+  --color-primary-lighter: hsl(215 85% 76%);
+  --color-primary-light: hsl(213 97% 87%);
+  --color-primary-base: hsl(213 97% 87%);
+  --color-primary-dark: hsl(214 95% 78%);
+
+  --background: var(--color-bg-weak-50);
+  --foreground: var(--color-text-strong-950);
+  --muted: var(--color-text-sub-600);
+  --card: hsl(221 27% 12% / 0.86);
+  --border: var(--color-stroke-soft-200);
+  --accent: var(--color-primary-base);
+  --accent-soft: var(--color-primary-alpha-16);
+
+  --color-fd-background: var(--color-bg-weak-50);
+  --color-fd-foreground: var(--color-text-strong-950);
+  --color-fd-muted: var(--color-bg-soft-200);
+  --color-fd-muted-foreground: var(--color-text-sub-600);
+  --color-fd-popover: var(--color-bg-white-0);
+  --color-fd-popover-foreground: var(--color-text-strong-950);
+  --color-fd-card: var(--color-bg-white-0);
+  --color-fd-card-foreground: var(--color-text-strong-950);
+  --color-fd-border: var(--color-stroke-soft-200);
+  --color-fd-primary: var(--color-primary-base);
+  --color-fd-primary-foreground: hsl(222 47% 11%);
+  --color-fd-secondary: var(--color-bg-soft-200);
+  --color-fd-secondary-foreground: var(--color-text-strong-950);
+  --color-fd-accent: var(--color-primary-alpha-10);
+  --color-fd-accent-foreground: var(--color-primary-light);
+  --color-fd-ring: var(--color-primary-light);
+  --color-fd-overlay: hsl(222 47% 11% / 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    color-scheme: dark;
+
+    --color-bg-white-0: hsl(222 24% 10%);
+    --color-bg-weak-50: hsl(222 39% 8%);
+    --color-bg-soft-200: hsl(220 23% 13%);
+    --color-bg-sub-300: hsl(218 18% 18%);
+    --color-bg-surface-800: hsl(215 30% 22%);
+    --color-bg-strong-950: hsl(210 40% 96%);
+
+    --color-text-white-0: hsl(210 40% 96%);
+    --color-text-disabled-300: hsl(217 15% 46%);
+    --color-text-soft-400: hsl(215 16% 65%);
+    --color-text-sub-600: hsl(214 20% 76%);
+    --color-text-strong-950: hsl(210 40% 96%);
+
+    --color-stroke-white-0: hsl(0 0% 100% / 0.28);
+    --color-stroke-soft-200: hsl(217 20% 19%);
+    --color-stroke-sub-300: hsl(217 16% 26%);
+    --color-stroke-strong-950: hsl(210 40% 96%);
+
+    --color-primary-alpha-10: hsl(213 97% 87% / 0.14);
+    --color-primary-alpha-16: hsl(213 97% 87% / 0.18);
+    --color-primary-alpha-24: hsl(213 97% 87% / 0.24);
+    --color-primary-lighter: hsl(215 85% 76%);
+    --color-primary-light: hsl(213 97% 87%);
+    --color-primary-base: hsl(213 97% 87%);
+    --color-primary-dark: hsl(214 95% 78%);
+
+    --background: var(--color-bg-weak-50);
+    --foreground: var(--color-text-strong-950);
+    --muted: var(--color-text-sub-600);
+    --card: hsl(221 27% 12% / 0.86);
+    --border: var(--color-stroke-soft-200);
+    --accent: var(--color-primary-base);
+    --accent-soft: var(--color-primary-alpha-16);
+
+    --color-fd-background: var(--color-bg-weak-50);
+    --color-fd-foreground: var(--color-text-strong-950);
+    --color-fd-muted: var(--color-bg-soft-200);
+    --color-fd-muted-foreground: var(--color-text-sub-600);
+    --color-fd-popover: var(--color-bg-white-0);
+    --color-fd-popover-foreground: var(--color-text-strong-950);
+    --color-fd-card: var(--color-bg-white-0);
+    --color-fd-card-foreground: var(--color-text-strong-950);
+    --color-fd-border: var(--color-stroke-soft-200);
+    --color-fd-primary: var(--color-primary-base);
+    --color-fd-primary-foreground: hsl(222 47% 11%);
+    --color-fd-secondary: var(--color-bg-soft-200);
+    --color-fd-secondary-foreground: var(--color-text-strong-950);
+    --color-fd-accent: var(--color-primary-alpha-10);
+    --color-fd-accent-foreground: var(--color-primary-light);
+    --color-fd-ring: var(--color-primary-light);
+    --color-fd-overlay: hsl(222 47% 11% / 0.6);
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-primary: var(--color-primary-base);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  background:
+    radial-gradient(circle at top, hsl(213 97% 87% / 0.34), transparent 32%),
+    linear-gradient(180deg, var(--background), var(--background));
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent-soft);
+}
+
+[data-search-full] {
+  background-color: color-mix(in srgb, var(--color-bg-white-0) 88%, transparent);
+  box-shadow: var(--shadow-regular-xs);
+}
+
+[data-toc-popover-trigger],
+[data-toc-popover-content] {
+  background-color: color-mix(in srgb, var(--color-bg-white-0) 90%, transparent);
+  box-shadow: var(--shadow-regular-xs);
+}

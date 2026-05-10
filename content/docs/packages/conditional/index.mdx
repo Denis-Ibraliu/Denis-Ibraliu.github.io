@@ -1,0 +1,187 @@
+---
+title: Conditional Package
+description: Declarative React components for explicit conditional rendering.
+---
+
+# `@commonkit/conditional`
+
+`@commonkit/conditional` is a small React package for declarative conditional rendering.
+
+It gives you explicit JSX primitives instead of sprinkling inline `&&` checks and nested ternaries through UI code.
+
+## Install
+
+<Tabs items={["npm", "yarn", "pnpm", "bun"]} groupId="package-manager" persist>
+  <Tab value="npm">
+
+  ```bash
+  npm install @commonkit/conditional
+  ```
+
+  </Tab>
+  <Tab value="yarn">
+
+  ```bash
+  yarn add @commonkit/conditional
+  ```
+
+  </Tab>
+  <Tab value="pnpm">
+
+  ```bash
+  pnpm add @commonkit/conditional
+  ```
+
+  </Tab>
+  <Tab value="bun">
+
+  ```bash
+  bun add @commonkit/conditional
+  ```
+
+  </Tab>
+</Tabs>
+
+`react` is a peer dependency and needs to be available in the consuming app.
+
+## Import
+
+```tsx
+import { If, Switch } from "@commonkit/conditional";
+```
+
+## Quick example
+
+```tsx
+import { If, Switch } from "@commonkit/conditional";
+
+type Status = "idle" | "loading" | "success" | "error";
+
+type Props = {
+  isLoggedIn: boolean;
+  status: Status;
+};
+
+export function DashboardState({ isLoggedIn, status }: Props) {
+  return (
+    <>
+      <If condition={isLoggedIn}>
+        <p>Welcome back.</p>
+      </If>
+
+      <Switch>
+        <Switch.Case condition={status === "loading"}>
+          <p>Loading...</p>
+        </Switch.Case>
+
+        <Switch.Case condition={status === "success"}>
+          <p>Saved successfully.</p>
+        </Switch.Case>
+
+        <Switch.Case condition={status === "error"}>
+          <p>Something went wrong.</p>
+        </Switch.Case>
+
+        <Switch.Default>
+          <p>Ready.</p>
+        </Switch.Default>
+      </Switch>
+    </>
+  );
+}
+```
+
+## `If`
+
+Use `If` when you want a small, explicit rendering gate around JSX.
+
+```tsx
+import { If } from "@commonkit/conditional";
+
+type Props = {
+  isLoggedIn: boolean;
+};
+
+export function WelcomeMessage({ isLoggedIn }: Props) {
+  return (
+    <If condition={isLoggedIn}>
+      <p>Welcome back.</p>
+    </If>
+  );
+}
+```
+
+### `If` API
+
+```tsx
+type IfProps = {
+  condition: boolean;
+  children?: React.ReactNode;
+};
+```
+
+## `Switch`
+
+Use `Switch` when multiple conditions compete and you want the first match to win.
+
+```tsx
+import { Switch } from "@commonkit/conditional";
+
+type Status = "idle" | "loading" | "success" | "error";
+
+type Props = {
+  status: Status;
+};
+
+export function StatusView({ status }: Props) {
+  return (
+    <Switch>
+      <Switch.Case condition={status === "loading"}>
+        <p>Loading...</p>
+      </Switch.Case>
+
+      <Switch.Case condition={status === "error"}>
+        <p>Something went wrong.</p>
+      </Switch.Case>
+
+      <Switch.Case condition={status === "success"}>
+        <p>Saved successfully.</p>
+      </Switch.Case>
+
+      <Switch.Default>
+        <p>Ready.</p>
+      </Switch.Default>
+    </Switch>
+  );
+}
+```
+
+If more than one case evaluates to `true`, the first matching case is rendered.
+
+### `Switch.Case` API
+
+```tsx
+type SwitchCaseProps = {
+  condition: boolean;
+  children?: React.ReactNode;
+};
+```
+
+### `Switch.Default` API
+
+```tsx
+type SwitchDefaultProps = {
+  children?: React.ReactNode;
+};
+```
+
+## Rules and Notes
+
+`Switch` is intentionally strict so branch handling stays obvious.
+
+- `Switch` must contain at least one `Switch.Case`
+- `Switch` must contain exactly one `Switch.Default`
+- `Switch` only accepts `Switch.Case` and `Switch.Default` as direct children
+- if multiple cases are `true`, the first matching case is rendered
+
+The order of cases matters. Put the highest-priority branch first so the result is predictable.

@@ -282,8 +282,6 @@ a {
   background: var(--accent-soft);
 }
 
-
-
 [data-search-full] {
   background-color: color-mix(in srgb, var(--color-bg-white-0) 88%, transparent);
   box-shadow: var(--shadow-regular-xs);

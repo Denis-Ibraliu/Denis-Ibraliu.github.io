@@ -1,6 +1,6 @@
 export const siteConfig = {
-  appName: "Util Libs",
-  docsPath: "/docs",
+  appName: "Commonkit",
+  docsPath: "/",
   repoUrl: "https://github.com/Denis-Ibraliu/util-libs",
   packageName: "@commonkit/conditional",
   packageUrl: "https://www.npmjs.com/package/@commonkit/conditional",

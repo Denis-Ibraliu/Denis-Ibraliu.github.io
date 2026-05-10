@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Util Libs",
-  description: "Documentation hub for the util-libs open-source monorepo.",
+  title: "Commonkit",
+  description: "Documentation hub for the Commonkit open-source monorepo.",
 };
 
 export default function RootLayout({
